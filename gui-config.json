@@ -1,0 +1,44 @@
+{
+  "configs": [
+    {
+      "server": "oc.dnswhy.top",
+      "server_port": 8388,
+      "password": "xdxd1098",
+      "method": "aes-256-cfb",
+      "remarks": "VPN",
+      "auth": false
+    },
+    {
+      "server": "USA.ISS.TF",
+      "server_port": 23456,
+      "password": "90777618",
+      "method": "aes-256-cfb",
+      "remarks": "",
+      "auth": false
+    }
+  ],
+  "strategy": null,
+  "index": 0,
+  "global": false,
+  "enabled": true,
+  "shareOverLan": false,
+  "isDefault": false,
+  "localPort": 1080,
+  "pacUrl": "null",
+  "useOnlinePac": false,
+  "availabilityStatistics": true,
+  "autoCheckUpdate": false,
+  "logViewer": {
+    "fontName": "Consolas",
+    "fontSize": 8.25,
+    "bgColor": "Black",
+    "textColor": "White",
+    "topMost": false,
+    "wrapText": false,
+    "toolbarShown": false,
+    "width": 600,
+    "height": 400,
+    "top": 640,
+    "left": 1320
+  }
+}
