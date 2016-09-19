@@ -9,11 +9,27 @@
       "auth": false
     },
     {
-      "server": "USA.ISS.TF",
+      "server": "usa.iss.tf",
       "server_port": 23456,
-      "password": "90777618",
+      "password": "78461858",
       "method": "aes-256-cfb",
-      "remarks": "",
+      "remarks": "正常",
+      "auth": false
+    },
+    {
+      "server": "usb.iss.tf",
+      "server_port": 443,
+      "password": "04501747",
+      "method": "aes-256-cfb",
+      "remarks": "正常",
+      "auth": false
+    },
+    {
+      "server": "jpa.iss.tf",
+      "server_port": 10000,
+      "password": "57443705",
+      "method": "aes-256-cfb",
+      "remarks": "正常",
       "auth": false
     }
   ],
