@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取VPN账号密码</title>
+    <style>
+        #iframe{display:none;margin:0;padding:0;border:2px solid blueviolet;width:100%;height:600px}
+        #result{padding:10px;font-size:14px;line-height:2;border:2px solid green;height:auto;white-space:normal}
+        .textarea{width:100%;height:400px}
+        img{display:none}
+        .container,.tutorials,.success,#footer,.portfolio-modal,.modal{display:none}
+        #free .container{display:block}
+        .title-2{
+            font-size: 14px;
+            line-height:2;
+        }
+    </style>
+</head>
+<body>
+<!--
+<section id="free">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h3>实验帐号</h3>
+                <hr class="star-primary">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 text-center">
+                <h4>A服务器地址:a.ssx.host</h4>
+                <h4>端口:1024</h4>
+                <h4>A密码:41729565</h4>
+                <h4>加密方式:aes-256-cfb</h4>
+                <h4><a data-toggle="modal" data-target="#qr01" href="#">二维码</a></h4>
+                <h4><font color="red">注意：每6小时更换一次密码</font></h4>
+            </div>
+            <div class="col-sm-4 text-center">
+                <h4>B服务器地址:b.ssx.host</h4>
+                <h4>端口:10008</h4>
+                <h4>B密码:15190930</h4>
+                <h4>加密方式:aes-256-cfb</h4>
+                <h4><a data-toggle="modal" data-target="#qr02" href="#">二维码</a></h4>
+                <h4><font color="red">注意：每6小时更换一次密码</font></h4>
+            </div>
+            <div class="col-sm-4 text-center">
+                <h4>C服务器地址:c.ssx.host</h4>
+                <h4>端口:10008</h4>
+                <h4>C密码:25977580</h4>
+                <h4>加密方式:aes-256-cfb</h4>
+                <h4><a data-toggle="modal" data-target="#qr03" href="#">二维码</a></h4>
+                <h4><font color="red">注意：每6小时更换一次密码</font></h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <br>
+                <p><a href="http://ss8.pm/" class="btn btn btn-info" target="_blank">
+                    <i class="fa fa-paper-plane-o"></i> 更多帐号</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+-->
+<h1>如何使用?</h1>
+<p class="title-2">把文本框生成的内容复制到gui-config.json,启动软件选择代理点即可.</p>
+<div id="result">
+    <textarea class="textarea"></textarea>
+</div>
+<div id="load"></div>
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<!--<script type="text/javascript" src="jquery.min.js"></script>-->
+<script type="text/javascript">
+    var jsonData = {
+        "configs": [
+            {
+                "server": "oc.dnswhy.top",
+                "server_port": 8388,
+                "password": "xdxd1098",
+                "method": "aes-256-cfb",
+                "remarks": "VPN",
+                "auth": false
+            }
+        ],
+        "strategy": "null",
+        "index": 0,
+        "global": false,
+        "enabled": true,
+        "shareOverLan": false,
+        "isDefault": false,
+        "localPort": 1080,
+        "pacUrl": "null",
+        "useOnlinePac": false,
+        "availabilityStatistics": "true",
+        "autoCheckUpdate": false,
+        "logViewer": {
+            "fontName": "Consolas",
+            "fontSize": 8.25,
+            "bgColor": "Black",
+            "textColor": "White",
+            "topMost": false,
+            "wrapText": false,
+            "toolbarShown": false,
+            "width": 600,
+            "height": 400,
+            "top": 640,
+            "left": 1320
+        }
+    };
+
+    var url = 'https://www.ishadowsocks.xyz/';
+
+    var html;
+    var className = '.col-sm-4';
+
+//    var $free = $('#free');
+    var $result = $('#result');
+    var iframeDoc,
+            iframeWin;
+    var $iframe = $('#iframe');
+
+//    window.onload = function (){
+//        $iframe.attr('src',url);
+//    };
+
+//    setTimeout(function(){
+//        console.log($iframe.find('#free'));
+//        iframeWin = $iframe[0].contentWindow;
+//        iframeDoc = iframeWin.document;
+//        console.log('iframeWin:', iframeWin);
+//        console.log('iframeDoc:', iframeDoc);
+//
+//        console.log(iframeDoc.querySelector('#free'));
+//        var $ifree = $iframe.contents().find("#free")
+//        console.log($ifree);
+//    },5000);
+
+
+//    $iframe[0].onload = function (){
+//        console.log('页面加载完毕');
+//        iframeWin = $iframe[0].contentWindow;
+//        iframeDoc = iframeWin.document;
+//        iframeDoc = $iframe[0].contentDocument || $iframe[0].contentWindow.document;
+//        console.log('iframeWin:', iframeWin);
+//        console.log('iframeDoc:', iframeDoc);
+//    };
+//
+//    var ifr = document.createElement('iframe');
+//    ifr.src = url;
+//    ifr.onload = function(){
+//        var doc = ifr.contentDocument || ifr.contentWindow.document;
+//        console.log(doc);
+//    };
+//
+//    $('body').append(ifr);
+
+//    $('#load').load(url,function(d){
+//        console.log(d);
+//
+//    });
+
+    $.get('https://bird.ioliu.cn/v1/?url=' + url,function(data){
+        //请求回来的数据直接是json对象
+//        console.log(data);
+//        $('.content').text(JSON.stringify(data,'',4));
+
+        $('#load').append(data);
+        $free = $('#load').find('#free');
+        //如果是bing接口，则加载一个图片
+        /*if(/bing\.com/.test(url)) {
+            alert(data.images[0].url);
+            $('<img src="'+data.images[0].url+'">').appendTo($('body'))
+        }*/
+
+        $free.find(className).each(function(){
+            var $target = $(this);
+            var $h4 = $target.find('h4');
+            var server,
+                    server_port,
+                    password,
+                    method,
+                    server_name;
+
+            server = $h4.eq(0).html();
+            server_port = $h4.eq(1).html();
+            password = $h4.eq(2).html();
+            method = $h4.eq(3).html();
+
+            server_name = server.split(':')[0];
+            server = server.split(':')[1];
+//        server = server.replace(/(\w+服务器地址\:)/ig,'');
+            server_port = server_port.replace(/(端口\:)/ig,'');
+            password = password.replace(/(\w+密码\:)/ig,'');
+            method = method.replace(/(加密方式\:)/ig,'');
+
+//        server.replace(/(\w+服务器地址\:)(\w+\.\w+\.\w+)/ig,function($1,$2){
+//            console.log('$1:', $1);
+//            console.log('$2:', $2);
+//        });
+
+            console.log(
+                    server_name
+                    ,server,
+                    server_port,
+                    password,
+                    method);
+            jsonData.configs.push({
+                "server": server,
+                "server_port": server_port,
+                "password": password,
+                "method": method,
+                "remarks": server_name,
+                "auth": false
+            })
+        });
+//        console.log(jsonData);
+        var jsonDataString = JSON.stringify(jsonData);
+//        console.log(jsonDataString);
+        $('.textarea').val(jsonDataString)
+
+    },'json');
+
+
+
+</script>
+</body>
+</html>
